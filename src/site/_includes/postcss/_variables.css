@@ -1,11 +1,14 @@
 /* breakpoints for media queries */
-$narrow: 400px;
-$mid: 740px;
-$wide: 1200px;
+
+$mobile: 400px;
+$tablet: 740px;
+$laptop: 1140px;
+$desktop: 1440px;
 
 /* colours */
-$page-color: #2424bb;
-$text-color: #fff;
-$accent-color: #27a4de;
-$dark-color: #000;
 
+$main-color: #667488;
+$accent-color: #de27b0;
+$main-text-color: #333333;
+$accent-text-color: #f4f4f4;
+$dark-color: #222222;

@@ -1,0 +1,51 @@
+p + * {
+  margin: 1.25em 0 0;
+}
+
+h1,
+h2,
+h3 {
+    color: $main-text-color;
+    font-weight: 600;
+    margin-bottom: .5em;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1;
+    @media (min-width: $tablet) {}
+    ;
+    @media (min-width: $laptop) {}
+    ;
+    @media (min-width: $desktop) {}
+    ;
+}
+
+
+ul,
+ol {
+    padding-left: 1em;
+}
+
+a:link,
+a:visited {
+    color: $main-text-color;
+    text-decoration: none;
+    font-weigh: bold;
+    border-bottom-width: 3px;
+    border-bottom-color: mix($main-text-color, $accent-color, 20%)
+}
+
+a:hover,
+a:focus {
+    color: $main-text-color;
+    border-bottom-color: $main-text-color;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:focus {
+    border-bottom-style: solid;
+}

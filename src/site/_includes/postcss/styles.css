@@ -1,202 +1,520 @@
+
 @import '_variables.css';
-@import '_syntax.css';
+@import '_reset.css';
+@import '_typography.css';
+@import '_menu-btn.css';
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-::-moz-selection {
-  background-color: $text-color;
-  color: $page-color;
-}
-::selection {
-  background-color: $text-color;
-  color: $page-color;
-}
-
-html {
-  background-color: $accent-color;
-}
-
-body {
-  text-align: center;
-  background-color: $page-color;
-  color: mix($text-color, $page-color, 90%);
-  font-family: sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.8;
-  min-height: 100vh;
-  background:  $page-color;
-  background: url(/images/bg-grid.png), linear-gradient(320deg, $page-color 0%, $accent-color 100%);
-
-  @media (min-width: $narrow) {
-    font-size: 18px;
-  };
-}
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  text-align: left;
-  @media (min-width: $mid) {
-    width: 600px;
-  };
-  @media (min-width: $wide) {
-    width: 700px;
-  };
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+    @media (min-width: $tablet) {}
+    ;
+    @media (min-width: $laptop) {}
+    ;
+    @media (min-width: $desktop) {}
+    ;
 }
 
 
-h1, h2, h3 {
-  color: $text-color;
-  font-weight: 600;
-  margin-top: 2em;
-  margin-bottom:0.2em;
-  line-height: 1;
-}
-h1 {
-  font-size: 3em;
-  margin-top:0.4em;
-  margin-bottom:0.2em;
-  line-height: 1;
+header {
+  .nav {
+    padding-top: 3em;
 
-  @media (min-width: $mid) {
-    font-size: 5em;
-  };
-  @media (min-width: $wide) {
-    font-size: 6em;
-  };
-}
+    ul, li {
+      padding: 0;
+    }
 
-p {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
+    li {
+        display: inline;
+    }
 
-.subtitle {
-  font-size: 1.2em;
-  margin-top: 1em;
-  margin-bottom: 5em;
-}
-
-ul, ol {
-  padding-left: 1em;
-}
-
-a:link,
-a:visited {
-  color: $text-color;
-  text-decoration: none;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: mix($text-color, $accent-color, 20%)
-}
-a:hover,
-a:focus {
-  color: $text-color;
-  border-bottom-color: $text-color;
-}
-
-.nakedLink a:link,
-.nakedLink a:visited,
-.nakedLink a:hover,
-.nakedLink a:focus {
-  border-bottom-style:none;
-}
-
-.nav {
-  padding-top: 3em;
-
-  li {
-    display: inline;
+    a:link,
+    a:visited {
+        display: inline-block;
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-top-color: mix($main-text-color, $accent-color, 40%);
+        border-bottom-style: none;
+        padding-top: 0.8em;
+        padding-bottom: 2em;
+        margin-left: 0;
+        margin-right: 0.7em;
+        width: 9em;
+        text-align: left;
+        color: mix($main-text-color, $accent-color, 80%);
+        text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+        color: $main-text-color;
+        border-top-color: $main-text-color;
+        border-bottom-style: none;
+    }
+    small {
+        display: block;
+        font-size: 0.7em;
+        color: mix($main-text-color, $accent-color, 60%);
+    }
   }
 
-  a:link,
-  a:visited {
-    display: inline-block;
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-color: mix($text-color, $accent-color, 40%);
-    border-bottom-style: none;
-    padding-top: 0.8em;
-    padding-bottom: 2em;
-    margin-left: 0;
-    margin-right: 0.7em;
-    width: 9em;
-    text-align: left;
-    color: mix($text-color, $accent-color, 80%);
-    text-decoration: none;
-  }
-  a:hover,
-  a:focus {
-      color: $text-color;
-      border-top-color: $text-color;
-      border-bottom-style: none;
+  .header__top {
+    background-color: $accent-color;
+    text-align: center;
+    color: $accent-text-color;
   }
 
-  small {
-    display: block;
-    font-size: 0.7em;
-    color: mix($text-color,$accent-color, 60%);
+  .header__bar { 
+
+
+    .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
   }
-}
+  
+  .header__nav {
+    text-align: center;
 
+    ul {
+      padding: 0;
+    }
 
-code {
-  font-size: 0.8em;
-  background-color: mix($text-color,$accent-color, 80%);
-  color: rgb(42, 65, 77);
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 6px;
-  padding-right: 6px;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-.date {
-  font-size: 0.8em;
-  font-style: italic;
-}
-
-main {
-  margin-top: 4em;
-}
-
-pre {
-  overflow: auto;
-  border-radius: 6px;
-  code {
-    border-style: none;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
   }
+
+
 }
 
 
 footer {
-  margin-top: 6em;
-  padding-top: 4em;
-  padding-bottom: 6em;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: mix($text-color, $accent-color, 10%);
-  font-size: 0.7em;
-  color: mix($text-color, $accent-color, 50%);
+    margin-top: 6em;
+    padding-top: 4em;
+    padding-bottom: 6em;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: mix($main-text-color, $accent-color, 10%);
+    font-size: 0.7em;
+    color: mix($main-text-color, $accent-color, 50%);
+    a:link,
+    a:visited {
+        color: mix($main-text-color, $accent-color, 90%);
+        border-bottom: solid 1px mix($accent-color, $main-color, 70%);
+    }
+    a:hover,
+    a:focus {
+        color: $main-text-color;
+        border-bottom: solid 1px $main-text-color;
+    }
+}
 
-  a:link,
-  a:visited {
-    color: mix($text-color, $accent-color, 90%);
-    border-bottom: solid 1px mix($accent-color, $page-color, 70%);
+
+
+
+
+
+
+
+
+/*===============================
+  Slider Area
+=================================*/
+
+.hero {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-end;
+  background: #f4f4f4;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+    @media (min-width: $laptop) {
+      flex-wrap: nowrap;
+      min-height: 600px;
+    }
   }
-  a:hover,
-  a:focus {
-    color: $text-color;
-    border-bottom: solid 1px $text-color;
+}
+
+
+.hero__content {
+  align-self: center;
+  position: relative;
+  z-index: 3;
+  top: 75px;
+  text-align: center;
+
+
+  @media (min-width: $laptop) {
+      top: 0px;
+      text-align: left;
+      width: 40%;
+  }
+
+  h1.seo {
+    display: none;
+  }
+
+  h2 {
+    font-size: 2.5em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: mix($main-color, #000, 50%);
+  }
+
+  h5 {
+    text-align: right;
+    
+    span {
+      color: $accent-color;
+    }
+  }
+}
+
+.hero__block {
+  background-image: url(/images/bottom-separator-white.svg);
+  /* filter: brightness(0.37) sepia(1) hue-rotate(180deg) saturate(1); */
+  position: absolute;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0;
+  z-index: 4;
+  width: 100%;
+  min-height: 80px;
+
+  @media (min-width: $tablet) {
+    min-height: 150px;
+  }
+  @media (min-width: $laptop) {
+    min-height: 200px;
+  }
+  @media (min-width: $desktop) {
+    min-height: 250px;
+  }
+}
+
+
+.hero__image {
+  z-index: 2;
+  align-self: center;
+  position: relative;
+
+  @media (min-width: $laptop) {
+    width: 60%;
+  }
+
+  img {
+    max-width: 800px;
+    position: relative;
+    bottom: -25px;
+  }
+}
+
+
+
+
+
+
+
+.welcome {
+  background: white;
+  text-align: center;
+  position: relative;
+  padding: 5em 0 13em;
+  overflow: hidden;
+  z-index: 5;
+
+  @media (min-width: $laptop) {
+    padding: 5em 0 10em;
+  }
+  
+  .container {
+    max-width: 700px;
+    position: relative;
+  }
+
+  h2, figure:nth-of-type(1) > img, p, a {
+    position: relative;
+    z-index: 2;
+  }
+
+  h2 {
+    font-size: 3em;
+    color: $main-color;
+  }
+
+  figure:nth-of-type(1) > img {
+    max-width: 250px;
+    margin: 1em 0 0;
+    width: 50%;
+
+    @media (min-width: $laptop) {
+      width: 25%;
+    }
+  }
+  
+  p {
+    padding-top: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  &__cta {
+    position: absolute;
+    bottom: -40%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+
+    @media (min-width: $tablet) {
+      right: -2%;
+    }
+
+    @media (min-width: $laptop) {
+      right: -25%;
+    }
+  }
+
+  a {
+    font-size: 110%;
+    
+
+    @media (min-width: $laptop) {
+      font-size: 110%;
+    }
+  }
+
+  i {
+    color: $accent-color;
+    padding-right: .5em;
+    font-size: 2em;
+  }
+
+  figure:nth-of-type(2) > img {
+    max-width: 500px;
+    position: absolute;
+    top: -50%;
+    left: 80%;
+    z-index: 1;
+    opacity: .6;
+  }
+}
+
+
+.h-team {
+  background-color: #f7f7f7;
+  padding: 0;
+
+  @media (min-width: $tablet) {
+    padding: 3em 0;   
+  }
+
+  .container{
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column-reverse;
+
+    @media (min-width: $tablet) {
+      flex-direction: row;
+    }
+
+    @media (min-width: $desktop) {
+      position: relative;
+    }
+  }
+
+  .col-50 {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $tablet) {
+      width: 50%;
+    }
+  }
+
+  .col-50:nth-of-type(1) {
+    
+    .avatar {
+      display: flex;
+      align-items: center;
+      align-self: baseline;
+      position: relative;
+      left: 5%;
+      
+      img {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        margin: 0 .5em 0 0;
+      }
+
+      &__text p {
+        color: $accent-color;
+      }
+    } 
+
+    .questions {
+      margin: 1.5em;
+      padding: 2em 3em 3em;
+      background-color: white;
+      box-shadow: 2px 3px 6px 0 rgba(0,0,0,.2);
+      border-radius: 5%;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (min-width: $tablet) {
+        width: initial;
+      }
+
+      h4 {
+        line-height: 1.3;
+        font-size: 1.5em;
+        text-align: center;
+
+        @media (min-width: $laptop) {
+          text-align: left;        }
+
+        span {
+          font-size: 200%;
+          color: $accent-color;
+          font-weight: bold;
+        }
+      }
+
+      .popular {
+        padding: 0 2em;
+        text-align: center;
+
+        ul {
+          position: relative;
+        }
+
+        li {
+          position: relative;
+          list-style-type: none;
+          padding: 2.5em 0;
+        }
+
+        li:after {
+          position: absolute;
+          content: "";
+          left: 0;
+          right: 0;
+          width: 80%;
+          height: 2px;
+          background-color: #55555524;
+          margin: auto;
+          bottom: 0;
+        }
+
+        li:last-of-type:after {
+          display: none;
+        }
+
+        a {
+          font-size: 1.5em;
+          color: mix($main-color, blue, 60%);
+          font-weight: bold;
+          border-bottom: none;
+        }
+      }
+    }
+    
+  }
+
+  .col-50:nth-of-type(2) {
+    padding: 3em 0 3em 3em;
+
+    figure {
+      align-self: self-end;
+
+      @media (min-width: $mobile) {
+        /* right: -10%; */
+      }
+      @media (min-width: $tablet) {
+        position: absolute;
+        right: 0;
+      }
+      @media (min-width: $desktop) {
+        right: -17%;
+      }
+    }
+
+    img {
+      width: 150%;
+      max-width: 600px;
+      border-radius: 50px 0 0 50px;
+      border-style: solid;
+      border-color: #f7f7f7;
+      border-width: 2em 0em 2em 2em;
+
+      @media (min-width: $tablet) {
+        width: 100%;
+      }
+
+      @media (min-width: $desktop) {
+        max-width: 800px;
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    bottom: 40%;
+    left: 0px;
+    width: 150%;
+
+    @media (min-width: $tablet) {
+      bottom: 10%;
+      width: 75%;
+    }
+    @media (min-width: $laptop) {
+      bottom: -25%;
+      width: 65%;
+    }
+
+    img {
+      opacity: .1;
+    }
+
+    .solid-square {
+      height: 1000px;
+      width: 100%;
+      background: #00f;
+      background: linear-gradient(180deg,#5273c1,#e4e4ff);
+      position: absolute;
+      bottom: -650px;
+      opacity: .2;
+      left: -50%;
+
+      @media (min-width: $tablet) {
+        left: -15%;
+        height: 700px;
+        bottom: -400px;
+      }
+      @media (min-width: $laptop) {
+        left: -35%;
+        height: 700px;
+        bottom: -250px;
+      }
+    }
   }
 }

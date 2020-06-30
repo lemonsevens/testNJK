@@ -1,12 +1,42 @@
-<header>
-  <ul class="nav">
-    <li>
-      <a href="/">home<small>where the heart is</small></a>
-    </li>
-    <li>
-      <a href="/about">about<small>all about this</small></a>
-    </li>
-  </ul>
-  <h1>{{ title }}</h1>
-  {%- if subtitle %}<p class="subtitle">{{ subtitle | safe }}</p>{% endif %}
+<header class="header" id="header">
+    <div class="header__top">
+        <div class="container">
+          <div class="alert">
+              <div class="alert__message">
+                  <p>Tap here for COVID-19 info</p>
+              </div>
+          </div>
+        </div>
+    </div>
+    <div class="header__bar">
+        <div class="container">
+          <div class="bar__logo">
+              <img src="/images/my_post_images_1/harperortho_logo.png" alt="logo">
+          </div>
+          <div class="bar__hamburger">
+            <button class="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
+              <svg width="100" height="100" viewBox="0 0 100 100">
+                <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                <path class="line line2" d="M 20,50 H 80" />
+                <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+              </svg>
+            </button>
+          </div>
+        </div>
+    </div>
+    <nav class="header__nav">
+        <div class="container">
+          <ul class="nav">
+              <li>
+                  <a href="/">getting started</a>
+              </li>
+              <li>
+                  <a href="/about">location</a>
+              </li>
+              <li>
+                  <a href="/about">our patients</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
 </header>

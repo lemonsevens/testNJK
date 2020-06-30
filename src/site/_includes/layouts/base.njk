@@ -1,27 +1,31 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/33d4c2ffc8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
     <title>{{ title }}</title>
-  </head>
-  <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
+</head>
 
-    <div class="container">
-      {% include "header.njk" %}
+<body {% if bodyClass %}class="{{ bodyClass }}" {% endif %}>
+
+    {% include "header.njk" %} 
+    <main class="main">
       {{ content | safe }}
-      {% include "footer.njk" %}
-    </div>
+    </main> 
+    {% include "footer.njk" %}
 
-    {% set js %}
-      {% include "js/core.js" %}
-      {% include "js/hello.js" %}
-    {% endset %}
-    <script>{{ js | jsmin | safe }}</script>
+    {% set js %} {% include "js/core.js" %} {% include "js/hello.js" %} {% endset %}
+    <script>
+        {
+            {
+                js | jsmin | safe
+            }
+        }
+    </script>
 
-  </body>
+</body>
+
 </html>
-
-
-

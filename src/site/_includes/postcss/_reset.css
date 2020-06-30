@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  background-color: $main-text-color;
+  color: $main-color;
+}
+
+::selection {
+  background-color: $main-text-color;
+  color: $main-color;
+}
+
+html {
+  background-color: $accent-color;
+}
+
+body {
+  background-color: $main-color;
+  color: mix($main-text-color, $main-color, 90%);
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.625;
+  min-height: 100vh;
+  background: $main-color;
+  background: url(/images/bg-grid.png), linear-gradient(320deg, #f4f4f4 0%, #ffffff 100%);
+  @media (min-width: $tablet) {
+      font-size: 15px;
+  }
+  ;
+  @media (min-width: $laptop) {
+      font-size: 16px;
+  }
+  ;
+  @media (min-width: $desktop) {
+      font-size: 18px;
+  }
+  ;
+}
+
+img {
+  width: 100%;
+}
