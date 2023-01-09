@@ -23,7 +23,7 @@
     "dotenv": "^8.2.0",
     "gifsicle": "^5.1.0",
     "html-minifier": "^4.0.0",
-    "luxon": "^1.24.1",
+    "luxon": "^1.28.1",
     "pngquant-bin": "^6.0.0",
     "postcss": "^7.0.32",
     "postcss-color-mix": "^1.1.0",
